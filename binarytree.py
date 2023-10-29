@@ -14,19 +14,19 @@ class BinaryTree:
         if not self.head:
             self.head = newNode
         else:
-            return self.inserts(self.head, newNode)
+            return self._inserts(self.head, newNode)
     
-    def inserts(self, oldNode, newNode):
+    def _inserts(self, oldNode, newNode):
         if newNode.value < oldNode.value:
             if not oldNode.left:
                 oldNode.left = newNode
             else:
-                self.inserts(oldNode.left, newNode)
+                self._inserts(oldNode.left, newNode)
         else:
             if not oldNode.right:
                 oldNode.right = newNode
             else:
-                self.inserts(oldNode.right, newNode)
+                self._inserts(oldNode.right, newNode)
                 
     def search(self, value):
         checkValue = False
